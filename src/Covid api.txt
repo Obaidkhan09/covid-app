@@ -1,0 +1,10 @@
+fetch("https://covid-19-data.p.rapidapi.com/country?name=italy", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+		"x-rapidapi-key": "2ff5d441b3msh027a92a261ae509p1bac58jsn1206ca86cdeb"
+	}
+})
+
+
+NOTE: RapiAPiKey is IMPORTANT
