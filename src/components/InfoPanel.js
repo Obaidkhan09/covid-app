@@ -25,24 +25,19 @@ export default function InfoPanel() {
   let [isTotal, setTotal] = useState({});
   useEffect(() => {
     let fetchTotal = async () => {
-      axios
-        .get(urlTotal, {
+      try {
+        const response = await axios.get(urlTotal, {
           headers: {
             'x-rapidapi-host': 'covid-19-data.p.rapidapi.com',
             'x-rapidapi-key':
               '2ff5d441b3msh027a92a261ae509p1bac58jsn1206ca86cdeb',
           },
-        })
-        .then((response) => {
-          setTotal(response.data[0]);
-        })
-        .catch((error) => {
-          // handle error
-          console.log(error);
-        })
-        .then(() => {
-          console.log('i will always run');
         });
+        console.log(response.data[0]);
+      } catch (err) {
+        // handle error
+        console.error(err);
+      }
     };
     fetchTotal();
   }, []);
