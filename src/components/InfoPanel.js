@@ -33,15 +33,12 @@ export default function InfoPanel() {
       });
 
       response = await response.json();
-      console.log(response[0]);
+      let temp = response[0];
       setTotal(response[0]);
+      console.log(temp);
     };
     fetchTotal();
   }, []);
-
-  useEffect(() => {
-    console.log(isTotal);
-  });
 
   const classes = useStyles();
 
